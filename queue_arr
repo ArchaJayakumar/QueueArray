@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define MAX 2
+int queue_arr[MAX];
+int rear=-1,front=0,data;
+void enq(int data){
+  printf("\nEnter data: "); 
+  scanf("%d",&data);
+  //front=0;
+  rear=rear+1;
+  queue_arr[rear]=data;
+  main();
+}
+void deq(){
+   //int i;
+   front=front+1;
+   //printf("%d\t",queue_arr[i]);
+   main();
+}
+void print(){
+    int i;
+    if(rear==MAX){
+        printf("\nQueue Overflow");
+    }
+    else if(front>rear){
+        printf("\nQueue Underflow");
+    }
+    else{
+        for(i=front;i<=rear;i++){
+            printf("%d\t",queue_arr[i]);
+        }
+    }
+   // }
+    main();
+}
+
+int main()
+{
+    int choice;
+    printf("\n1.Enqueue\n2.Dequeue\n3.Print\n4.Exit");
+    printf("\nEnetr your choice: ");
+    scanf("%d",&choice);
+    switch(choice){
+        case 1:
+        enq(data);
+        break;
+        case 2:
+        deq();
+        break;
+        case 3:
+        print();
+        break;
+        case 4:
+        exit(0);
+        default:
+        printf("\nEnter correct choice");
+    }
+    return 0;
+}
